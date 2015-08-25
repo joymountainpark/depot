@@ -22,9 +22,9 @@
 
       <ul class="nav navbar-nav navbar-right">
 
-        <% if @cart %>
+        <% if @cart.line_items.count > 0 %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Show Your Cart<span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">You have <%= pluralize(@cart.line_items.count, 'item') %><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= render @cart %></li>
               </ul>
